@@ -1,0 +1,14 @@
+class Solution:
+    def maxProfit(self, inventory: list[int], orders: int) -> int:
+        from heapq import heappush, heappop, heapify
+        inventory = [-i for i in inventory ]
+        heapify(inventory)
+        total = 0
+        while orders > 0:
+            a = heappop(inventory)
+            total -= a
+            orders -=1
+            heappush(inventory, a + 1)
+        return total
+a = Solution()
+print(a.maxProfit(inventory = [3,5], orders = 6))
