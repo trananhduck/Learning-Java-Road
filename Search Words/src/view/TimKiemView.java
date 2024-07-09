@@ -10,14 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import model.TimKiemModel;
 
 public class TimKiemView extends JFrame {
-    private TimKiemModel timKiemModel;
+    private final TimKiemModel timKiemModel;
     private JLabel jLabel_ketQua;
     private JTextArea jTextArea_vanban;
     private JTextField jTextField_tukhoa;
