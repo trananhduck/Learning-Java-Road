@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import view.TimKiemView;
 
 public class TimKiemListener implements ActionListener {
-    private TimKiemView TimKiemView;
     private final TimKiemView timKiemView;
 
     public TimKiemListener(TimKiemView timKiemView) {
