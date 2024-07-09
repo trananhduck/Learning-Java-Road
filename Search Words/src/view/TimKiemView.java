@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import model.TimKiemModel;
@@ -34,10 +36,12 @@ public class TimKiemView extends JFrame {
         // Center Panel
         JLabel jLabel_vanBan = new JLabel("Van ban");
         jLabel_vanBan.setFont(font);
-        jTextArea_vanban = new JTextArea(10, 10); // Sửa kích thước để hợp lý hơn
+        jTextArea_vanban = new JTextArea(10, 50); // Sửa kích thước để hợp lý hơn
         jTextArea_vanban.setFont(font);
 
-        // Footer 
+        JScrollPane jScrollPane = new JScrollPane(jTextArea_vanban, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        // Footer
         TimKiemListener timKiemListener = new TimKiemListener(this);
 
         JLabel jLabel_tukhoa = new JLabel("Tu Khoa");
@@ -49,7 +53,7 @@ public class TimKiemView extends JFrame {
         jButton_thongKe.setFont(font);
         jButton_thongKe.addActionListener(timKiemListener);
         jButton_thongKe.setBackground(Color.BLUE); // Đổi màu nút bấm
-        
+
         jLabel_ketQua = new JLabel();
         jLabel_ketQua.setBackground(Color.YELLOW);
         jLabel_ketQua.setFont(font);
@@ -64,7 +68,7 @@ public class TimKiemView extends JFrame {
 
         this.setLayout(new BorderLayout());
         this.add(jLabel_vanBan, BorderLayout.NORTH);
-        this.add(jTextArea_vanban, BorderLayout.CENTER);
+        this.add(jScrollPane, BorderLayout.CENTER); // Thêm JScrollPane vào JFrame
         this.add(jPanel_footer, BorderLayout.SOUTH);
         this.setVisible(true);
     }
